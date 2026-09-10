@@ -1,8 +1,11 @@
 #include <iostream>
+#include <ctime>
 #include "include/personaje.h"
 #include "include/types.h"
-
+#include "include/dado.h"
+//g++ main.cpp src/personaje.cpp src/dado.cpp -o programa
 int main(){
+    srand(time(0));
 
     stats estadisticas_base;
     estadisticas_base.Armadura=100;
@@ -38,6 +41,20 @@ int main(){
 
     ClaseA=a.get_clase();
 
-    std::cout<<ClaseA.Nombre;
+    bolsa_dados my_bolsa;
+    my_bolsa.Cantidad_Caras=6;
+    my_bolsa.Cantidad_Dados=4;
+
+
+    tirar_dado(my_bolsa);
+
+
+    std::cout<<ClaseA.Nombre<<" Tirada: "<<my_bolsa.valores[0]<<","<<my_bolsa.valores[1]<<","<<my_bolsa.valores[2]<<","<<my_bolsa.valores[3]<<"\n";
+
+    int suma = suma_dados(my_bolsa);
+    int mayor = mayor_valor(my_bolsa);
+    int menor = menor_valor(my_bolsa);
     
+
+    std::cout<<"Mayor: "<<mayor<<" Menor: "<<menor<<" Suma: "<<suma;
 }
