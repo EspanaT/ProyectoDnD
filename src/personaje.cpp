@@ -32,8 +32,11 @@ clase personaje::get_clase(){return Clase;}
 void personaje::agregar_objeto(equipamiento equipo){Inventario.push_back(equipo);}
 
 void personaje::actualizar_Estado(){
+
     hojaCaracter E=Especie.Caracteristicas;
     hojaCaracter C=Clase.Caracteristicas;
+
+    CaracteristicasSecundarias=CaracteristicasPrincipales;
 
     CaracteristicasSecundarias.Agilidad=E.Agilidad+C.Agilidad;
     CaracteristicasSecundarias.Fuerza=E.Fuerza+C.Fuerza;
@@ -42,4 +45,13 @@ void personaje::actualizar_Estado(){
     CaracteristicasSecundarias.ResistenciaEspiritual=E.ResistenciaEspiritual+C.ResistenciaEspiritual;
     CaracteristicasSecundarias.ResistenciaFisica=E.ResistenciaFisica+C.ResistenciaFisica;
 
+}
+
+void personaje::actualizar_Stats(){
+    
+}
+
+void personaje::operator+(stats &n){
+
+    Modoficado.Armadura=Base.Armadura+n.Armadura;
 }

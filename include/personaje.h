@@ -11,11 +11,6 @@ private:
     std::string Nombre;
     stats Base;
     stats Modoficado;
-    float Vida;
-    int Cordura;
-    int ConexionDivina;
-    float Armadura;
-    float Ataque;
     hojaCaracter CaracteristicasPrincipales;
     hojaCaracter CaracteristicasSecundarias;
     especie Especie;
@@ -47,5 +42,9 @@ public:
 
 
     void actualizar_Estado();
+
+    void actualizar_Stats();
+
+    void operator+(stats &n);
 };
 
