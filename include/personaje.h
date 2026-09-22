@@ -43,8 +43,7 @@ public:
 
     void actualizar_Estado();
 
-    void actualizar_Stats();
+    void actualizar_Stats(float Cvida);
 
-    void operator+(stats &n);
 };
 

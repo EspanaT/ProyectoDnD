@@ -4,6 +4,7 @@
 personaje::personaje(std::string Nombre,stats Base,hojaCaracter CaracteristicasPrinciaples, especie Especie, clase Clase){
     this->Nombre=Nombre;
     this->Base=Base;
+    this->Modoficado=Base;
     this->CaracteristicasPrincipales=CaracteristicasPrinciaples;
     this->Especie=Especie;
     this->Clase=Clase;
@@ -47,11 +48,16 @@ void personaje::actualizar_Estado(){
 
 }
 
-void personaje::actualizar_Stats(){
-    
+void personaje::actualizar_Stats(float Cvida){
+    if(Modoficado.Armadura<=0)
+    {
+        if(Modoficado.Vida>0)
+        {
+            Modoficado.Vida=+Cvida;
+        }
+    }else
+    {
+        Modoficado.Armadura=+Cvida;
+    }
 }
 
-void personaje::operator+(stats &n){
-
-    Modoficado.Armadura=Base.Armadura+n.Armadura;
-}

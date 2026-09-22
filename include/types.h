@@ -16,8 +16,6 @@ struct stats
     float Vida;
     float Armadura;
     float Ataque;
-    int Cordura;
-    int ConexionDivina;
 };
 
 struct equipamiento

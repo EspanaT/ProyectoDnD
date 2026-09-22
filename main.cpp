@@ -10,8 +10,6 @@ int main(){
     stats estadisticas_base;
     estadisticas_base.Armadura=100;
     estadisticas_base.Ataque=10;
-    estadisticas_base.ConexionDivina=0;
-    estadisticas_base.Cordura=-1;
     estadisticas_base.Vida=15;
 
     hojaCaracter hojaC;
