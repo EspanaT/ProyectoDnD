@@ -1,13 +1,105 @@
 #include <iostream>
 #include <ctime>
+#include <conio.h>
+#include <cstdlib>
 #include "include/personaje.h"
 #include "include/types.h"
 #include "include/dado.h"
 //g++ main.cpp src/personaje.cpp src/dado.cpp -o programa
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
+
+using namespace std;
+
+void mostrarMenu(int seleccionado)
+{
+    system("cls");
+
+    cout << "============================\n";
+    cout << "       MENU PRINCIPAL       \n";
+    cout << "============================\n\n";
+
+    string opciones[] = {
+        "Iniciar",
+        "Configuracion",
+        "Creditos",
+        "Salir"
+    };
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (i == seleccionado)
+            cout << "  > " << opciones[i] << " <\n";
+        else
+            cout << "    " << opciones[i] << "\n";
+    }
+
+    cout << "\nUsa ↑ ↓ y ENTER\n";
+}
+
+
 int main(){
     srand(time(0));
 
-    int op;
+    int seleccionado = 0;
+    char tecla;
+
+    while (true)
+    {
+        mostrarMenu(seleccionado);
+
+        tecla = _getch();
+
+        // Flecha arriba
+        if (tecla == 72)
+        {
+            seleccionado--;
+
+            if (seleccionado < 0)
+                seleccionado = 3;
+        }
+
+        // Flecha abajo
+        else if (tecla == 80)
+        {
+            seleccionado++;
+
+            if (seleccionado > 3)
+                seleccionado = 0;
+        }
+
+        // ENTER
+        else if (tecla == 13)
+        {
+            system("cls");
+
+            switch (seleccionado)
+            {
+                case 0:
+                    cout << "Iniciando...\n";
+                    break;
+
+                case 1:
+                    cout << "Configuracion...\n";
+                    break;
+
+                case 2:
+                    cout << "Creditos...\n";
+                    break;
+
+                case 3:
+                    cout << "Saliendo...\n";
+                    return 0;
+            }
+
+            _getch();
+        }
+    }
+
+    return 0;
+
+    /*int op;
 
     std::cout<<"Opciones: \n\t1)Crear personaje\n\t2)Salir";
     std::cin>>op;
@@ -61,5 +153,5 @@ int main(){
     int menor = menor_valor(my_bolsa);
     
 
-    std::cout<<"Mayor: "<<mayor<<" Menor: "<<menor<<" Suma: "<<suma;
+    std::cout<<"Mayor: "<<mayor<<" Menor: "<<menor<<" Suma: "<<suma;*/
 }
