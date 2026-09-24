@@ -61,3 +61,7 @@ void personaje::actualizar_Stats(float Cvida){
     }
 }
 
+bool personaje::estas_Vivo(){
+    return (Modoficado.Vida<0) ? 1:0;
+}
+

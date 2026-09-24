@@ -7,6 +7,13 @@
 int main(){
     srand(time(0));
 
+    int op;
+
+    std::cout<<"Opciones: \n\t1)Crear personaje\n\t2)Salir";
+    std::cin>>op;
+
+    
+
     stats estadisticas_base;
     estadisticas_base.Armadura=100;
     estadisticas_base.Ataque=10;

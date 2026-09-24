@@ -40,10 +40,13 @@ public:
     //Funcion para agregar objeto al inventario
     void agregar_objeto(equipamiento equipo);
 
-
+    //Todavia no se que voy a hacer aqui recuenrda revisar <---- ._.
     void actualizar_Estado();
-
+    
+    //Sirve para resivir daño 
     void actualizar_Stats(float Cvida);
+
+    bool estas_Vivo();
 
 };
 
