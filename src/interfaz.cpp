@@ -6,10 +6,9 @@
 #include "../include/types.h"
 #include "../include/interfaz.h"
 
-void mover_puntero(int* seleccionado,char* tecla)
+void mover_puntero(int* seleccionado,char* tecla, void (*operacion)(char))
 {
     *tecla = _getch();
-
     // Flecha arriba
     if (*tecla == 72)
     {
@@ -27,6 +26,10 @@ void mover_puntero(int* seleccionado,char* tecla)
         if (*seleccionado > 3)
             *seleccionado = 0;
     }
+    else if (*tecla == 13)
+        {
+            operacion(*tecla);
+        }
 }
 
 void dibujar_Menu(int seleccionado)
@@ -55,7 +58,7 @@ void dibujar_Menu(int seleccionado)
     std::cout << "\nUsa  ^ v  y ENTER\n";
 }
 
-void dibujar_Personaje(int seleccinado,hojaCaracter* hojaCara, stats* stadisticas,clase* clase,especie* especie, personaje* personaje )
+void dibujar_Personaje(int seleccinado,hojaCaracter hojaCara, stats stadisticas,clase clase,especie especie, personaje* personaje )
 {
     system("cls");
 

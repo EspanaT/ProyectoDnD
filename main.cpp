@@ -132,5 +132,14 @@ int main(){
     int menor = menor_valor(&my_bolsa);
     
 
+    std::cout<<"Mayor: "<<mayor<<" Menor: "<<menor<<" Suma: "<<suma<<"\n";
+
+    tirar_dado(&my_bolsa);
+
+    menor = menor_valor(&my_bolsa);
+    mayor = mayor_valor(&my_bolsa);
+    suma = suma_dados(&my_bolsa);
+
+    std::cout<<ClaseA.Nombre<<" Tirada: "<<my_bolsa.valores[0]<<","<<my_bolsa.valores[1]<<","<<my_bolsa.valores[2]<<","<<my_bolsa.valores[3]<<"\n";
     std::cout<<"Mayor: "<<mayor<<" Menor: "<<menor<<" Suma: "<<suma;
 }
