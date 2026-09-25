@@ -5,7 +5,8 @@
 #include "include/personaje.h"
 #include "include/types.h"
 #include "include/dado.h"
-//g++ main.cpp src/personaje.cpp src/dado.cpp -o programa
+#include "include/interfaz.h"
+//g++ main.cpp src/personaje.cpp src/dado.cpp src/interfaz.cpp -o programa
 #include <iostream>
 #include <conio.h>
 #include <cstdlib>
@@ -35,7 +36,7 @@ void mostrarMenu(int seleccionado)
             cout << "    " << opciones[i] << "\n";
     }
 
-    cout << "\nUsa ↑ ↓ y ENTER\n";
+    cout << "\nUsa ^ v y ENTER\n";
 }
 
 
@@ -45,12 +46,18 @@ int main(){
     int seleccionado = 0;
     char tecla;
 
+    stats estadisticas_base;
+    hojaCaracter hojaC;
+    clase ClaseA;
+    especie Pespecie;
+    personaje a;
+
     while (true)
     {
-        mostrarMenu(seleccionado);
+        dibujar_Menu(seleccionado);
 
         tecla = _getch();
-
+        
         // Flecha arriba
         if (tecla == 72)
         {
@@ -76,8 +83,8 @@ int main(){
 
             switch (seleccionado)
             {
-                case 0:
-                    cout << "Iniciando...\n";
+                case 0: 
+                    dibujar_Personaje(0,&hojaC,&estadisticas_base,&ClaseA,&Pespecie,&a);
                     break;
 
                 case 1:

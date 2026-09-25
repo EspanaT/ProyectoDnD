@@ -1,6 +1,8 @@
 #include "../include/personaje.h"
 #include "../include/types.h"
-
+personaje::personaje(){
+    
+}
 personaje::personaje(std::string Nombre,stats Base,hojaCaracter CaracteristicasPrinciaples, especie Especie, clase Clase){
     this->Nombre=Nombre;
     this->Base=Base;

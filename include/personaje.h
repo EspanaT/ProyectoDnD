@@ -18,6 +18,7 @@ private:
     std::vector<equipamiento> Inventario;
 public:
     personaje(std::string Nombre,stats Base,hojaCaracter CaracteristicasPrinciaples, especie Especie, clase Clase);
+    personaje();
 
     //Setter Valores bases
     void set_stats(stats Base);
