@@ -13,12 +13,12 @@ void tirar_dado(int cantidadD,int cantidadC, int *listD)
     }
 }
 
-void tirar_dado(bolsa_dados &info_dados)
+void tirar_dado(bolsa_dados *info_dados)
 {
     
-    for(int x=0;x<=info_dados.Cantidad_Dados;x++)
+    for(int x=0;x<=info_dados->Cantidad_Dados;x++)
     {
-        info_dados.valores[x]= (rand() % info_dados.Cantidad_Caras)+1;
+        info_dados->valores[x]= (rand() % info_dados->Cantidad_Caras)+1;
     }
 }
 
@@ -32,12 +32,12 @@ int suma_dados(int cantidadD,int listaD[])
     return total;
 }
 
-int suma_dados(bolsa_dados &info_dados)
+int suma_dados(bolsa_dados* info_dados)
 {
     int total;
-    for(int x=0;x<info_dados.Cantidad_Dados-1;x++)
+    for(int x=0;x<info_dados->Cantidad_Dados-1;x++)
     {
-        total=total+info_dados.valores[x];
+        total=total+info_dados->valores[x];
     }
     return total;
 }
@@ -56,14 +56,14 @@ int mayor_valor(int cantidadD,int listaD[])
     return mayor;
 }
 
-int mayor_valor(bolsa_dados &info_dados)
+int mayor_valor(bolsa_dados *info_dados)
 {
     int mayor=0;
-    for(int x=0;x<=info_dados.Cantidad_Dados-1;x++)
+    for(int x=0;x<=info_dados->Cantidad_Dados-1;x++)
     {   
-        if(mayor<info_dados.valores[x])
+        if(mayor<info_dados->valores[x])
         {
-            mayor=info_dados.valores[x];
+            mayor=info_dados->valores[x];
         }
     }
     return mayor;
@@ -82,14 +82,14 @@ int menor_valor(int cantidadD,int cantidadC,int listaD[])
     return menor;
 }
 
-int menor_valor(bolsa_dados &info_dados)
+int menor_valor(bolsa_dados *info_dados)
 {
-    int menor=info_dados.Cantidad_Caras;
-    for(int x=0;x<=info_dados.Cantidad_Dados-1;x++)
+    int menor=info_dados->Cantidad_Caras;
+    for(int x=0;x<=info_dados->Cantidad_Dados-1;x++)
     {
-        if(menor>info_dados.valores[x])
+        if(menor>info_dados->valores[x])
         {
-            menor=info_dados.valores[x];
+            menor=info_dados->valores[x];
         }
     }
     return menor;

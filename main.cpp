@@ -13,37 +13,12 @@
 
 using namespace std;
 
-void mostrarMenu(int seleccionado)
-{
-    system("cls");
-
-    cout << "============================\n";
-    cout << "       MENU PRINCIPAL       \n";
-    cout << "============================\n\n";
-
-    string opciones[] = {
-        "Iniciar",
-        "Configuracion",
-        "Creditos",
-        "Salir"
-    };
-
-    for (int i = 0; i < 4; i++)
-    {
-        if (i == seleccionado)
-            cout << "  > " << opciones[i] << " <\n";
-        else
-            cout << "    " << opciones[i] << "\n";
-    }
-
-    cout << "\nUsa ^ v y ENTER\n";
-}
 
 
 int main(){
     srand(time(0));
 
-    int seleccionado = 0;
+   /* int seleccionado = 0;
     char tecla;
 
     stats estadisticas_base;
@@ -57,7 +32,7 @@ int main(){
         dibujar_Menu(seleccionado);
 
         tecla = _getch();
-        
+
         // Flecha arriba
         if (tecla == 72)
         {
@@ -104,12 +79,9 @@ int main(){
         }
     }
 
-    return 0;
+    return 0;*/
 
-    /*int op;
-
-    std::cout<<"Opciones: \n\t1)Crear personaje\n\t2)Salir";
-    std::cin>>op;
+    
 
     
 
@@ -150,15 +122,15 @@ int main(){
     my_bolsa.Cantidad_Dados=4;
 
 
-    tirar_dado(my_bolsa);
+    tirar_dado(&my_bolsa);
 
 
     std::cout<<ClaseA.Nombre<<" Tirada: "<<my_bolsa.valores[0]<<","<<my_bolsa.valores[1]<<","<<my_bolsa.valores[2]<<","<<my_bolsa.valores[3]<<"\n";
 
-    int suma = suma_dados(my_bolsa);
-    int mayor = mayor_valor(my_bolsa);
-    int menor = menor_valor(my_bolsa);
+    int suma = suma_dados(&my_bolsa);
+    int mayor = mayor_valor(&my_bolsa);
+    int menor = menor_valor(&my_bolsa);
     
 
-    std::cout<<"Mayor: "<<mayor<<" Menor: "<<menor<<" Suma: "<<suma;*/
+    std::cout<<"Mayor: "<<mayor<<" Menor: "<<menor<<" Suma: "<<suma;
 }

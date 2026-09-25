@@ -48,5 +48,5 @@ struct bolsa_dados
 {
     int Cantidad_Caras;
     int Cantidad_Dados;
-    int valores[];
+    int valores[100];
 };
